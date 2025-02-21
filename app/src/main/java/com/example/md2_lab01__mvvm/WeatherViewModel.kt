@@ -19,6 +19,9 @@ class WeatherViewModel(private val service: RetrofitServices,
     private val _toastMessage = MutableLiveData<String?>()
     val toastMessage: LiveData<String?> = _toastMessage
 
+    private val _isCelsius = MutableLiveData(true)
+    val isCelsius: LiveData<Boolean> = _isCelsius
+
     fun fetchWeather(city: String) {
         val apiKey = ""
         val call = service.getWeatherListByCity(city, apiKey)
@@ -40,6 +43,14 @@ class WeatherViewModel(private val service: RetrofitServices,
                 _toastMessage.value = "Network error: ${t.localizedMessage}"
             }
         })
+    }
+
+    fun toggleTemperatureUnit() {
+        _isCelsius.value = !(_isCelsius.value ?: true)
+    }
+
+    fun onToastShow() {
+        _toastMessage.value = null
     }
 }
 

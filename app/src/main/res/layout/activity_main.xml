@@ -42,16 +42,32 @@
             android:hint="@string/input"
             android:inputType="text"
             android:padding="8dp"
-            android:layout_marginEnd="14sp"/>
+            android:layout_marginEnd="14sp"
+            android:layout_gravity="center"/>
 
-        <Button
-            android:id="@+id/search_button"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="14sp"
-            android:text="@string/search"
-            android:layout_gravity="center" />
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="@string/search"
+                android:layout_marginEnd="4dp"/>
+
+            <ToggleButton
+                android:id="@+id/toggleTempUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOn="@string/fahrenheit"
+                android:textOff="@string/celsius"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

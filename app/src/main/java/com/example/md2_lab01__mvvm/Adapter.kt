@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class Adapter(diffCallback: DiffCallback) : ListAdapter<WeatherList, Adapter.ViewHolder>(diffCallback) {
+    class Adapter(diffCallback: DiffCallback,  private val viewModel: WeatherViewModel) : ListAdapter<WeatherList, Adapter.ViewHolder>(diffCallback) {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         @SuppressLint("DefaultLocale")
         fun bind(weatherList: WeatherList) {
