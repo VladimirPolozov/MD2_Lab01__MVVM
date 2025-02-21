@@ -27,8 +27,7 @@ class WeatherViewModel(private val service: RetrofitServices,
             override fun onResponse(call: Call<WeatherWrapper>, response: Response<WeatherWrapper>) {
                 when {
                     response.code() == 404 -> _toastMessage.value = "There is no such city found"
-                    response.body() == null ->
-                        _toastMessage.value = "Format data error"
+                    response.body() == null -> _toastMessage.value = "Format data error"
                 }
                 if (response.isSuccessful) {
                     response.body()?.list?.let {
