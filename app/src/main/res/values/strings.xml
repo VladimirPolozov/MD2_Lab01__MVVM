@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MD2_Lab01__MVVM</string>
+    <string name="search">search</string>
+    <string name="input">city</string>
 </resources>
